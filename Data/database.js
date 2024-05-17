@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 //1.Connecting
 const connectDB = () => {
   mongoose
-    .connect("mongodb://localhost:27017", { dbName: "BackendAPI" })
+    .connect(process.env.MONGO_URI, { dbName: "BackendAPI" })
     .then(() => {
       console.log("Database Connected");
     })
